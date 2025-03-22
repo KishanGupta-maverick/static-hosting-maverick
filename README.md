@@ -41,7 +41,7 @@ This guide walks through the process of hosting a static website on AWS S3, sett
 ## Final Outcome 🎉
 ✅ A fully automated, globally accessible static website hosted on AWS!
 
-### Access the Website: [Your CloudFront URL]
-(Replace with actual CloudFront URL)
+### Access the Website: https://dux1fr7e5n4gg.cloudfront.net
+
 
 ---
