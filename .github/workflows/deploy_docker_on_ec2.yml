@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to EC2
       run: |
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd /home/ubuntu/app  # Change this to your app folder
+          cd /home/ubuntu/app.py  # Change this to your app folder
           git pull origin main
           sudo docker stop myapp || true
           sudo docker rm myapp || true
