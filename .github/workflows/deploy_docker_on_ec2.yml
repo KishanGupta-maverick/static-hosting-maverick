@@ -32,8 +32,8 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
           cd /home/ubuntu/app  # Change this to your app folder
           git pull origin main
-          docker stop myapp || true
-          docker rm myapp || true
-          docker build -t myapp .
-          docker run -d -p 5000:5000 myapp
+          sudo docker stop myapp || true
+          sudo docker rm myapp || true
+          sudo docker build -t myapp .
+          sudo docker run -d -p 5000:5000 myapp
         EOF
