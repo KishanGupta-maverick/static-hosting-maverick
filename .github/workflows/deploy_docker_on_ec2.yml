@@ -12,7 +12,9 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
-
+      with:
+        path: /home/ubuntu/flaskapp
+        
     - name: Set up SSH Key
       run: |
         mkdir -p ~/.ssh
@@ -30,7 +32,7 @@ jobs:
     - name: Deploy to EC2
       run: |
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd /home/ubuntu  # Your app is directly in /home/ubuntu
+          cd /home/ubuntu/flaskapp  # Your app is directly in /home/ubuntu
           git pull origin main
           sudo docker stop myapp || true
           sudo docker rm myapp || true
